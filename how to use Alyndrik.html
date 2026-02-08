@@ -1,0 +1,307 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Alyndrik Lite Guide</title>  
+    <!-- Google Fonts - Roboto for a clean, modern look similar to the image -->  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+    <style>  
+        /* Basic Reset & Body Styling */  
+        body {  
+            user-select: none;  
+            font-family: 'Roboto', sans-serif; /* Clean sans-serif font */  
+            margin: 0;  
+            padding: 0;  
+            background-color: #fff; /* White background as per image */  
+            color: #333; /* Default text color */  
+            line-height: 1.6;  
+            -webkit-font-smoothing: antialiased; /* Better font rendering */  
+            -moz-osx-font-smoothing: grayscale;  
+        }  .container {  
+        max-width: 800px; /* Max width to mimic mobile-friendly layout */  
+        margin: 0 auto; /* Center the container */  
+        padding: 20px;  
+    }  
+
+    /* Header Styling */  
+    header {  
+        margin-bottom: 30px;  
+        text-align: left; /* Align to left */  
+    }  
+
+    header h1 {  
+        font-size: 2.2em; /* Large, bold title */  
+        color: #000; /* Black title text */  
+        font-weight: 700; /* Bold */  
+        margin-bottom: 10px;  
+    }  
+
+    header p {  
+        font-size: 1.1em;  
+        color: #555; /* Slightly lighter description text */  
+        margin-top: 0;  
+    }  
+
+    /* Section Styling for numbered/iconed blocks */  
+    .section-block {  
+        margin-bottom: 30px;  
+    }  
+
+    .section-header {  
+        display: flex;  
+        align-items: baseline; /* Align text baselines for number and title */  
+        margin-bottom: 10px;  
+        gap: 10px; /* Space between number/icon and title */  
+    }  
+
+    .section-number {  
+        font-size: 3em; /* Very large number like '01', '02' in the image */  
+        color: #007bff; /* Blue color for numbers */  
+        font-weight: 700;  
+        line-height: 1; /* Keep the number from creating too much vertical space */  
+    }  
+
+    .section-title {  
+        font-size: 1.6em; /* Title for each main numbered section */  
+        color: #007bff; /* Blue color for section titles */  
+        font-weight: 700;  
+        margin: 0;  
+        flex-grow: 1; /* Allow title to take up remaining space */  
+    }  
+
+    .section-description {  
+        font-size: 1.1em;  
+        margin-top: 0;  
+        margin-bottom: 20px;  
+        color: #333;  
+    }  
+
+    /* Sub-headings within sections */  
+    .sub-heading {  
+        font-size: 1.3em;  
+        color: #000;  
+        font-weight: 700;  
+        margin-top: 25px;  
+        margin-bottom: 15px;  
+    }  
+
+    /* List Styling */  
+    ul, ol {  
+        padding-left: 25px;  
+        margin-bottom: 20px;  
+    }  
+
+    ul li, ol li {  
+        margin-bottom: 10px;  
+        font-size: 1em;  
+        color: #333;  
+    }  
+
+    ul.feature-list li strong, ol li strong {  
+        color: #000; /* Make strong parts black for emphasis */  
+    }  
+
+    /* Specific styling for introductory and summary sections with emoji icons */  
+    .intro-section .section-number,  
+    .summary-details .section-number,  
+    .download-section .section-number {  
+        font-size: 1.8em; /* Smaller emoji size */  
+        line-height: 1.6; /* Adjust line-height to align with text */  
+    }  
+    .intro-section .section-title,  
+    .summary-details .section-title,  
+    .download-section .section-title {  
+        font-size: 1.4em; /* Smaller title size for these sections */  
+    }  
+    .intro-section .section-header,  
+    .summary-details .section-header,  
+    .download-section .section-header {  
+        align-items: center; /* Center align emoji with title */  
+    }  
+    .summary-details .section-number {  
+        color: #28a745; /* Green for the checkmark icon */  
+    }  
+    .summary-details .section-title,  
+    .download-section .section-title {  
+        color: #000; /* Black for these specific titles */  
+    }  
+    .summary-details ul li {  
+        list-style-type: '— '; /* Dash bullet for the summary list */  
+        margin-bottom: 8px;  
+    }  
+    .summary-details ul {  
+        padding-left: 20px;  
+    }  
+
+
+    /* "Alyndrik Lite functionality" - main sub-header */  
+    h2.main-functionality-header {  
+        font-size: 1.8em;  
+        color: #000;  
+        font-weight: 700;  
+        margin-top: 40px;  
+        margin-bottom: 10px;  
+    }  
+    p.main-functionality-description {  
+        font-size: 1.1em;  
+        margin-bottom: 30px;  
+        color: #555;  
+    }  
+
+    /* Note text styling */  
+    .note-text {  
+        background-color: #e6f7ff; /* Light blue background for emphasis */  
+        border-left: 5px solid #007bff; /* Blue left border */  
+        padding: 15px;  
+        margin-top: 20px;  
+        margin-bottom: 20px;  
+        font-style: italic;  
+        border-radius: 3px;  
+    }  
+
+    /* Download Link Styling */  
+    .download-link {  
+        display: inline-block;  
+        background-color: #007bff; /* Blue button */  
+        color: #fff;  
+        padding: 12px 25px;  
+        text-decoration: none;  
+        border-radius: 5px;  
+        font-weight: 700;  
+        margin-top: 15px;  
+        transition: background-color 0.3s ease; /* Smooth hover effect */  
+    }  
+
+    .download-link:hover {  
+        background-color: #0056b3; /* Darker blue on hover */  
+    }  
+
+    /* Horizontal Rule (separator) */  
+    hr {  
+        border: none;  
+        border-top: 1px solid #eee; /* Light grey separator line */  
+        margin: 40px 0; /* Space above and below separator */  
+    }  
+</style>
+
+</head>  
+<body>  
+    <div class="container">  
+        <header>  
+            <h1>🎄🎅🎁Alyndrik</h1>  
+            <p>This merry Christmas, we introduce to you <strong>Alyndrik Lite</strong> — a powerful AI assistant that's with you anywhere, online or offline!</p>  
+        </header>  <section class="section-block intro-section">  
+        <div class="section-header">  
+            <span class="section-number">🔵</span> <!-- Blue circle icon -->  
+            <h2 class="section-title">What can Alyndrik Lite Do?</h2>  
+        </div>  
+        <p class="section-description">Alyndrik is a smart AI assistant that works both Online and Offline. It helps you chat, get information, save your conversations, and stay updated with the latest app features.</p>  
+    </section>  
+
+    <hr>  
+
+    <h2 class="main-functionality-header">Alyndrik Lite functionality</h2>  
+    <p class="main-functionality-description">The complete breakdown of Alyndrik’s functionality:</p>  
+      
+    <section class="section-block">  
+        <div class="section-header">  
+            <span class="section-number">01</span>  
+            <h2 class="section-title">🔹 Offline & Online Support</h2>  
+        </div>  
+        <p class="section-description">Alyndrik works Online for the best performance, but can operate fully Offline after it downloads the supportive files.</p>  
+        <p class="section-description">✔ <strong>Requires Internet for the first use:</strong> Keep your Internet ON for at least 10 minutes so the AI model can fully download and save itself locally. After this, Alyndrik will work smoothly even without Internet.</p>  
+    </section>  
+
+    <hr>  
+
+    <section class="section-block">  
+        <div class="section-header">  
+            <span class="section-number">02</span>  
+            <h2 class="section-title">🔹 Chat History & State Saving</h2>  
+        </div>  
+        <p class="section-description">Alyndrik automatically saves your chat to your device.</p>  
+        <ul class="feature-list">  
+            <li>✔ <strong>Features:</strong> Saves all your past conversations.</li>  
+            <li>Loads your chat instantly when you reopen the app.</li>  
+            <li>Allows you to delete all chat history anytime.</li>  
+            <li>Scrolls to the latest message automatically.</li>  
+            <li>Automatically responds to any unanswered message after you reload.</li>  
+        </ul>  
+    </section>  
+
+    <hr>  
+
+    <section class="section-block">  
+        <div class="section-header">  
+            <span class="section-number">03</span>  
+            <h2 class="section-title">Reminder</h2>  
+        </div>  
+        <p class="section-description">Keep data turned on.</p>  
+    </section>  
+
+    <hr>  
+      
+    <section class="section-block summary-details">  
+        <div class="section-header">  
+            <span class="section-number">✅</span> <!-- Checkmark icon -->  
+            <h2 class="section-title">AI Model Details</h2>  
+        </div>  
+        <ul class="summary-list">  
+            <li><strong>AI Model:</strong> Alyndrik 2.0.4</li>  
+            <li><strong>Modes:</strong> Online + Offline (after caching).</li>  
+            <li><strong>Features:</strong> Offline SDK caching. Chat history save/delete. Auto-response after reload.</li>  
+            <li><strong>Resilience:</strong> Works offline after caching. Shows errors/fallbacks if SDK fails.</li>  
+            <li><strong>Identity:</strong> Named Alyndrik, different from Eyon but runs on a very similar framework.</li>  
+        </ul>  
+        <p class="note-text">👉 So, Alyndrik is essentially a modernized sibling of Eyon, with the same AI core. Access Eyon chatbot for Developers and make your own tools.</p>  
+    </section>  
+
+    <hr>  
+
+    <section class="section-block download-section">  
+        <div class="section-header">  
+            <span class="section-number">⬇️</span> <!-- Download icon -->  
+            <h2 class="section-title">DOWNLOAD</h2>  
+        </div>  
+        <p><a href="https://download-alyndrik.netlify.app" class="download-link">Alyndrik Lite new release</a></p>  
+    </section>  
+
+    <hr>  
+
+    <section class="section-block">  
+        <div class="section-header">  
+            <span class="section-number">04</span>  
+            <h2 class="section-title">Have Issues with Installing Alyndrik?</h2>  
+        </div>  
+        <p class="section-description">Alyndrik Lite is designed for Android versions 10 and above.</p>  
+        <h3 class="sub-heading">How to Fix Installation Problems:</h3>  
+        <ol>  
+            <li><strong>Storage Space:</strong> Although the Alyndrik.apk file is <strong>2.0 MB</strong>, ensure your device has sufficient free storage capacity before attempting installation.</li>  
+            <li><strong>Android Version:</strong> Verify that your Android device is running version 10 or higher, as Alyndrik is only compatible with these versions.</li>  
+        </ol>  
+    </section>  
+
+    <hr>  
+
+    <section class="section-block">  
+        <div class="section-header">  
+            <span class="section-number">05</span>  
+            <h2 class="section-title">Alyndrik Lite Not Working?</h2>  
+        </div>  
+        <ol>  
+            <li><strong>Initial Internet Connection:</strong> While Alyndrik functions both online and offline, it initially requires an active internet connection for at least 10 minutes to set up.</li>  
+            <li><strong>Cached Data:</strong> Do not clear Alyndrik's cached data. If cleared, you will need to reconnect to the internet to download necessary files again.</li>  
+            <li><strong>Usage Limits:</strong> Alyndrik Lite operates with usage limits. Excessive use within a short timeframe may temporarily take it offline until the system's quota resets after a 12-hour period. Therefore, please use it efficiently.</li>  
+            <li><strong>Software Update:</strong> Make sure your Android device is updated to the latest software version.</li>  
+            <li><strong>Connectivity:</strong> If your data connection drops to 0 MBs, toggle Flight mode (ON & OFF), then Restart the app.</li>  
+            <li><strong>SIM Cards to Use:</strong> Verify that your Airtel 4G SIM card is selected for mobile data.</li>  
+            <li><strong>Stable Network:</strong> Ensure you have a Stable Network Connection.</li>  
+        </ol>  
+    </section>  
+
+</div>
+
+</body>  
+</html>

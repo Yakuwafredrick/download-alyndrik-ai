@@ -1,27 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App A (Admin)</title>
-    <link rel="stylesheet" href="app/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Alyndrik Chatbot - Download</title>
+    <meta name="description" content="Download the latest version of the Alyndrik Chatbot APK from YakuwaTechnologies.">
+    <meta property="og:title" content="Alyndrik Chatbot - Download">
+    <meta property="og:description" content="Get the cutting-edge Alyndrik Chatbot APK now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/alyndrik-download">
+    <!-- You might want to add an og:image here -->
+    <meta property="og:image" content="https://yourwebsite.com/images/alyndrik-chatbot-share-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> -->
+  
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* =========================
+       VIDEO WALLPAPER
+    ========================== */
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff; /* Default text color if no container text color is set */
+        overflow: hidden; /* Keep body scrollable hidden */
+    }
+
+    /* Video background */
+    .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        overflow: hidden;
+    }
+
+    .video-bg video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Dark overlay */
+    .video-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for better text contrast */
+        z-index: 1;
+    }
+
+    /* =========================
+       PRELOADER
+    ========================== */
+    #pre-load {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /*rgba(255, 255, 255, 0.9);*/ /* Slightly transparent white for a clean look */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out; /* Smooth fade out */
+        }
+
+        #pre-load img {
+            max-width: 120px; /* Adjust size for a cleaner loader */
+            height: auto;
+        }
+
+    /* =========================
+       TRANSPARENT CONTENT CARD
+    ========================== */
+    .main-content {
+        user-select: none;
+        display: none;
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 85vh;
+        overflow-y: auto;
+
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+        box-sizing: border-box;
+        z-index: 5;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a { /* Apply text shadow to all relevant text elements */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    }
+
+    h1 {
+        font-size: 2.2em;
+        color: #ffffff; /* Brighter white for main titles */
+        margin-bottom: 10px;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Stronger shadow for main title */
+    }
+
+    .tagline {
+        font-size: 1.1em;
+        color: #eaeaea; /* Lighter grey for taglines */
+        margin-bottom: 30px;
+        line-height: 1.6; /* Good line height for readability */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* =========================
+       VIDEO PREVIEW (INSIDE CARD)
+    ========================== */
+    .media-display video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+    .download-button,
+    .download-button2 {
+        user-select: none;
+        display: inline-block;
+        margin-top: 15px;
+        padding: 15px 30px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.2em;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        margin: 10px;
+    }
+
+    .download-button {
+        background-color: #007bff;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .download-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+    }
+
+    .download-button2 {
+        background-color: #28a745; /* Green */
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .download-button2:hover {
+        background-color: #1e7e34;
+        transform: translateY(-3px);
+    }
+
+    footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #ccc; /* Lighter grey for footer */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    /* =========================
+       RESPONSIVE ADJUSTMENTS
+    ========================== */
+    @media (max-width: 768px) {
+        body {
+            font-size: 15px;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        .main-content {
+            width: 95%;
+            padding: 15px;
+            max-height: 80vh;
+        }
+        .download-button, .download-button2 {
+             padding: 12px 25px;
+             font-size: 1.1em;
+             margin: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 1.6em;
+        }
+        .tagline {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .download-button, .download-button2 {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 6px;
+        }
+         .main-content {
+            max-height: 75vh;
+        }
+    }
+</style>
+
+
 </head>
 <body>
-    <div class="chat-container">
-        <!-- Added a placeholder for user status -->
-        <div class="user-status" id="userStatusDisplay">
-            Status: Checking...
-        </div>
-        <div class="messages-display" id="messagesDisplay">
-            <!-- Messages will appear here -->
-        </div>
-        <div class="message-input-area">
-            <input type="text" id="messageInput" placeholder="Type your message to App B...">
-            <button id="sendButton">Send</button>
-        </div>
+
+    <!-- VIDEO WALLPAPER -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <!-- 🔽 Replace with your video -->
+            <source src="files/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- Link to your script.js -->
-    <script src="app/script.js"></script>
+    <!-- PRELOADER -->
+    <div id="pre-load">
+        <img src="Loading-image/loader.gif" alt="Loading...">
+    </div>
+
+    <!-- TRANSPARENT CONTENT -->
+    <div class="main-content" id="container">
+       
+        <h1>🚀 Alyndrik Chatbot – New Release</h1>
+
+        <p class="tagline">
+            Experience the next generation of AI interaction.
+            Download the latest Alyndrik APK now and connect with intelligence!
+        </p>
+
+        <div class="media-display">
+            <video controls poster="placeholder-image.jpg" src="files/Alyndrik chatbot.mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <a href="/download" class="download-button">
+    🎄🎅Download Alyndrik APK
+</a>
+
+        <a href="how to use Alyndrik.html" class="download-button2">
+            How to use Alyndrik
+        </a>
+
+        <footer>
+            &copy; 2025 YakuwaTechnologies. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        window.addEventListener('load', () => {
+            const preLoad = document.getElementById('pre-load');
+            const mainContent = document.getElementById('container');
+
+            setTimeout(() => {
+                preLoad.style.opacity = '0'; // Start fading out
+                preLoad.addEventListener('transitionend', () => {
+                    preLoad.style.display = 'none'; // Hide after fade
+                }, { once: true });
+                mainContent.style.display = 'block'; // Show main content
+            }, 3100); // Your specified delay
+        });
+    </script>
+
+
 </body>
 </html>
