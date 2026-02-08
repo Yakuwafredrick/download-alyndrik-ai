@@ -271,16 +271,20 @@
         </div>
 
         <a href="/download" class="download-button">
-    🎄🎅Download Alyndrik APK
+    Download Alyndrik APK
 </a>
 
         <a href="how to use Alyndrik.html" class="download-button2">
             How to use Alyndrik
         </a>
 
-        <footer>
-            &copy; 2025 YakuwaTechnologies. All rights reserved.
-        </footer>
+<footer>
+  &copy; <span id="year"></span> YakuwaTechnologies. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     </div>
 
     <!-- SCRIPT -->
